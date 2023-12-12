@@ -18,8 +18,10 @@ public class EmployeeController {
     private EmployeeRepository employeeRepository;
 
     @GetMapping
-    public List<Employee> getAllEmployees(){
-        return employeeRepository.findAll();
+    public ResponseEntity<List<Employee>> getAllEmployees(){
+        List<Employee> listEmployee=employeeRepository.findAll();
+        return ResponseEntity.ok(listEmployee);
+
     }
 
     // build create employee REST API
@@ -63,4 +65,5 @@ public class EmployeeController {
         return new ResponseEntity<>(HttpStatus.NO_CONTENT);
 
     }
+
 }

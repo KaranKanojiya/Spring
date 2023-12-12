@@ -1,0 +1,40 @@
+Mockito Use Cases in EmployeeControllerTest
+Overview:
+The EmployeeControllerTest class uses Mockito to test the behavior of methods within the EmployeeController class. It specifically focuses on mocking the EmployeeRepository to simulate database operations and verify the expected behavior of the controller methods.
+
+Test Methods:
+getTestAllEmployees():
+
+Purpose: Tests the getAllEmployees() method in EmployeeController.
+Mocks the EmployeeRepository.findAll() method to return a list of employees.
+Verifies that the response contains the expected list of employees.
+getEmployeeById_validId_returnEmployee():
+
+Purpose: Tests the getEmployeeById() method with a valid employee ID.
+Mocks the EmployeeRepository.findById() to return an employee with the given ID.
+Verifies that the response contains the expected employee.
+testGetEmployeeByIdNotFound():
+
+Purpose: Tests the getEmployeeById() method when an employee with a non-existing ID is requested.
+Mocks the EmployeeRepository.findById() to return an empty optional.
+Verifies that the method throws a ResourceNotFoundException.
+testUpdateEmployee():
+
+Purpose: Tests the updateEmployee() method.
+Mocks the repository to simulate finding an existing employee, updating its details, and saving the changes.
+Verifies that the updated employee details are returned in the response.
+testUpdateEmployeeNotFound():
+
+Purpose: Tests the updateEmployee() method when an employee with a non-existing ID is updated.
+Mocks the EmployeeRepository.findById() to return an empty optional.
+Verifies that the method throws a ResourceNotFoundException.
+testDeleteEmployee():
+
+Purpose: Tests the deleteEmployee() method.
+Mocks the repository to simulate finding an existing employee and deleting it.
+Verifies that the method returns a HttpStatus.NO_CONTENT and the employee deletion is verified.
+testDeleteEmployeeNotFound():
+
+Purpose: Tests the deleteEmployee() method when an employee with a non-existing ID is requested for deletion.
+Mocks the EmployeeRepository.findById() to return an empty optional.
+Verifies that the method throws a ResourceNotFoundException.
