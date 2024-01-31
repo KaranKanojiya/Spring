@@ -22,11 +22,10 @@ public class SpringbootBackendApplication implements CommandLineRunner {
 	@Override
 	public void run(String... args) throws Exception {
 
- 		/*Employee employee = new Employee();
+ 		Employee employee = new Employee();
 		employee.setFirstName("Karan");
 		employee.setLastName("Kanojiya");
 		employee.setEmailId("kanojiyakaran@gmail.com");
 		employeeRepository.save(employee);
-		*/
 	}
 }
